@@ -1,0 +1,31 @@
+name: 'Log Finder'
+
+description: 'Search a string to find all contained log files'
+
+inputs:
+  content:
+    description: 'The string to search for log files in'
+    required: false
+  content_path: 
+    description: 'The file which contains the string to search for log files in'
+    required: false
+  file_suffix:
+    description: 'File suffix'
+    required: true
+    default: 'log'
+
+outputs:
+  log_files:
+    description: 'The log files that were found'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.content }}
+    - ${{ inputs.content_path }}
+    - ${{ inputs.file_suffix }}
+
+branding:
+  icon: file-text
+  color: green

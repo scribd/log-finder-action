@@ -1,0 +1,6 @@
+/var/folders/wz/gfmnqb3x78sgz5vww3w2mrjh0000gn/T/carthage-xcodebuild.asdf.123.log
+/var/folders/wz/gfmnqb3x7output.log
+/var/folders/wz/gfmnqb3x78sgz5vww3w2mrjh0000gn/T/hello-xcodebuild.asdf.123.log
+./somefile.log
+/Users/basher/Library/Developer/Xcode/DerivedData/TestingTest-gdgaczvhjqcyjkdnismgbepkohom/Logs/Test/Run-TestingTest-2018.11.04_10-33-09--0800.xcresult/2_Test/Diagnostics/TestingTestTests-2AB26E26-E9AB-4C2F-B5C6-8635107CFC73/TestingTestTests-956F4A0D-DFAB-4F84-AA47-8CA22766F658/Session-TestingTestTests-2018-11-04_103312-uwb1nH.log
+/Users/basher/Library/Developer/Xcode/DerivedData/TestingTest-gdgaczvhjqcyjkdnismgbepkohom/Logs/Test/Run-TestingTest-2018.11.04_10-33-09--0800.xcresult/2_Test/Diagnostics/TestingTestTestsClone-1839D686-073A-4949-992D-C29FB0972E47/TestingTestTestsClone-15AA3B6A-3C63-4500-A25C-C3E9C5140FDF/Session-TestingTestTestsClone-2018-11-04_103345-pcZlMv.log

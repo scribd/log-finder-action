@@ -1,0 +1,54 @@
+name: Log Finder
+
+on: [push]
+
+jobs:
+  log-finder-test-string:
+    runs-on: ubuntu-latest
+    name: Test Using Content String
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Load mock build output.
+        id: load_build_output
+        run: |
+          echo "::set-output name=build_output::some file /exists/here.log and other ./right/here.log but /ignore/this/file.jpg"
+
+      - name: Find Log Files
+        uses: ./
+        id: find_log_files
+        with:
+          content: ${{ steps.load_build_output.outputs.build_output }}
+          file_suffix: log
+
+      - name: Confirm Expected Files Were Found
+        run: |
+          if [[ "${{ steps.find_log_files.outputs.log_files }}" != $'/exists/here.log\n./right/here.log' ]]; then
+            echo "Unexepected Result:\n${{ steps.find_log_files.outputs.log_files }}"
+            exit 1
+          fi
+
+  log-finder-test-file:
+    runs-on: ubuntu-latest
+    name: Test Using Text File
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Find Log Files
+        uses: ./
+        id: log_finder
+        with:
+          content_path: |
+            test/test.txt
+            test/failure.log
+          file_suffix: log
+
+      - name: Confirm Expected Files Were Found
+        run: |
+          if [[ "${{ steps.log_finder.outputs.log_files }}" != `cat test/test_expected_result.txt` ]]; then
+            echo $'Unexepected Result:\n${{ steps.log_finder.outputs.log_files }}'
+            exit 1
+          fi
+

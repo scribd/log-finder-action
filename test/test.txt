@@ -1,0 +1,31 @@
+Please update to the latest Carthage version: 0.35.0. You currently are on 0.34.0
+*** No Cartfile.resolved found, updating dependencies
+*** Fetching SomeProject
+*** Fetching OtherProject
+*** Checking out AnotherProject at "v3.17.3"
+*** Checking out FinalProject at "1273cb428e0c9a43c1de964ef896c532ee67391e"
+*** xcodebuild output can be found in /var/folders/wz/gfmnqb3x78sgz5vww3w2mrjh0000gn/T/carthage-xcodebuild.asdf.123.log trailing
+*** Building scheme "SomeProject-iOS" in AnotherProject.xcworkspace
+*** Building scheme "SomeProject-watchOS" in AnotherProject.xcworkspace
+*** Building scheme "OtherProject-watchOS" in FinalProject.xcodeproj
+*** Building scheme "OtherProject-watchOS-AnotherProject" in FinalProject.xcodeproj
+*** Building scheme "OtherProject-iOS" in FinalProject.xcodeproj
+*** Building scheme "OtherProject-iOS-AnotherProject" in FinalProject.xcodeproj
+*** Building scheme "OtherProjectTestKit" in FinalProject.xcodeproj
+*** Building scheme "FinalProjectTestKit-AnotherProject" in FinalProject.xcodeproj
+Please update to the latest Carthage version: 0.35.0. You currently are on 0.34.0
+*** No Cartfile.resolved found, updating dependencies
+*** Fetching FinalProject
+*** Fetching AnotherProject
+*** Checking out AnotherProject at "v3.17.3"
+*** Checking out FinalProject at "1273cb428e0c9a43c1de964ef896c532ee67391e"
+*** xcodebuild /var/folders/wz/gfmnqb3x7output.log can be found in /var/folders/wz/gfmnqb3x78sgz5vww3w2mrjh0000gn/T/hello-xcodebuild.asdf.123.log hello /aSDF/HELLO.txt
+*** Building scheme "AnotherProject-iOS" in AnotherProject.xcworkspace ./somefile.log
+*** Building scheme "AnotherProject-watchOS" in AnotherProject.xcworkspace
+*** Building scheme "FinalProject-watchOS" in FinalProject.xcodeproj
+*** Building scheme "FinalProject-watchOS-AnotherProject" in FinalProject.xcodeproj
+*** Building scheme "FinalProject-iOS" in FinalProject.xcodeproj
+*** Building scheme "FinalProject-iOS-AnotherProject" in FinalProject.xcodeproj
+*** Building scheme "FinalProjectTestKit" in FinalProject.xcodeproj
+*** Building scheme "FinalProjectTestKit-AnotherProject" in FinalProject.xcodeproj
+random.logs
