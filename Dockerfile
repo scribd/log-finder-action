@@ -1,7 +1,8 @@
 FROM alpine:3.10
 
-WORKDIR /code
+RUN apk update && \
+    apk add bash
 
-COPY entrypoint.sh .
+COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["/code/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]

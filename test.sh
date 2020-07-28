@@ -33,4 +33,4 @@ function green() {
 }
 
 docker-compose build
-docker-compose run core test/test.txt test/failure.log txt
+docker-compose run core "" "test/test.txt test/failure.log" txt

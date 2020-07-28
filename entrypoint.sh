@@ -1,24 +1,18 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 set -o errexit
 set -o nounset
 set -o pipefail
-#set -o verbose
-#set -o xtrace
 
 CONTENT="${1}"
 CONTENT_PATH="${2}"
 SUFFIX="${3}"
-
-echo "a"
-env
 
 if [ -n "$CONTENT_PATH" ]; then
     while IFS= read -r line; do
         CONTENT="$CONTENT
         `cat $line || true`"
     done <<< "$CONTENT_PATH"
-    echo ${CONTENT}
 fi
 
 MATCHING_FILES=`echo $CONTENT | grep -Eo "[^ ]*\.${SUFFIX}\b"` || true
