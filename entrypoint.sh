@@ -1,11 +1,17 @@
-#!/bin/bash
+#!/usr/bin/env sh
+
+set -o errexit
+set -o nounset
+set -o pipefail
+#set -o verbose
+#set -o xtrace
 
 # CONTENT="${1}"
 # CONTENT_PATH="${2}"
 # SUFFIX="${3}"
 
 echo "a"
-
+env
 
 # if [ -n "$CONTENT_PATH" ]; then
 #     while IFS= read -r line; do

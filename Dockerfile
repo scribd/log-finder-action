@@ -1,5 +1,7 @@
 FROM alpine:3.10
 
-COPY entrypoint.sh /entrypoint.sh
+WORKDIR /code
 
-ENTRYPOINT ["/entrypoint.sh"]
+COPY entrypoint.sh .
+
+ENTRYPOINT ["/code/entrypoint.sh"]
