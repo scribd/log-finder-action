@@ -6,25 +6,21 @@ inputs:
   content:
     description: 'The string to search for log files in'
     required: false
-  content_path: 
+  content-path: 
     description: 'The file which contains the string to search for log files in'
     required: false
-  file_suffix:
+  file-suffix:
     description: 'File suffix'
     required: true
     default: 'log'
 
 outputs:
-  log_files:
+  log-files:
     description: 'The log files that were found'
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.content }}
-    - ${{ inputs.content_path }}
-    - ${{ inputs.file_suffix }}
+  using: 'node12'
+  main: 'index.js'
 
 branding:
   icon: file-text

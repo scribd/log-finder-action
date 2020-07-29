@@ -41,14 +41,14 @@ The string to search for log files in.
 - require: false
 
 
-### `content_path`
+### `content-path`
 
 The file(s) which contains the string to search for log files in.
 
 - require: false
 
 
-### `file_suffix`
+### `file-suffix`
 
 The file type(s) to search for. Such as log, txt, etc.
 
@@ -58,7 +58,7 @@ The file type(s) to search for. Such as log, txt, etc.
 
 ## Outputs
 
-### `log_files`
+### `log-files`
 
 The found log file paths (separated by newlines).
 
@@ -69,10 +69,10 @@ The found log file paths (separated by newlines).
 ```yaml
 - name: Find Log Files
   uses: justAnotherDev/log-finder-action@v1.0
-  id: log_finder
+  id: log-finder
   with:
     content: ${{ steps.some_build_step.outputs.build_output }}
-    file_suffix: |
+    file-suffix: |
       log
       txt
 
@@ -81,7 +81,7 @@ The found log file paths (separated by newlines).
   uses: actions/upload-artifact@v2
   with:
     name: build-logs
-    path: ${{ steps.log_finder.outputs.log_files }}
+    path: ${{ steps.log-finder.outputs.log-files }}
 ```
 
 ### Parsing mutliple files to find all log files
@@ -89,9 +89,9 @@ The found log file paths (separated by newlines).
 ```yaml
 - name: Find Log Files
   uses: justAnotherDev/log-finder-action@v1.0
-  id: log_finder
+  id: log-finder
   with:
-    content_path: |
+    content-path: |
       test/test.txt
       test/failure.log
 ```
