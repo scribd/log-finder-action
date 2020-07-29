@@ -7,16 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     name: Test Using Content String
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
       - name: Load mock build output.
         id: load_build_output
         run: |
           echo "::set-output name=build_output::some file /exists/here.log and other ./right/here.log but /ignore/this/file.jpg"
 
       - name: Find Log Files
-        uses: ./
+        uses: justAnotherDev/log-finder-action@master
         id: find_log_files
         with:
           content: ${{ steps.load_build_output.outputs.build_output }}
@@ -37,7 +34,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Find Log Files
-        uses: ./
+        uses: justAnotherDev/log-finder-action@master
         id: log_finder
         with:
           content_path: |
