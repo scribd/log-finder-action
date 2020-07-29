@@ -68,8 +68,8 @@ The found log file paths (separated by newlines).
 
 ```yaml
 - name: Find Log Files
-  uses: justAnotherDev/log-finder-action@master
-  id: find_log_files
+  uses: justAnotherDev/log-finder-action@v1.0
+  id: log_finder
   with:
     content: ${{ steps.some_build_step.outputs.build_output }}
     file_suffix: |
@@ -81,14 +81,14 @@ The found log file paths (separated by newlines).
   uses: actions/upload-artifact@v2
   with:
     name: build-logs
-    path: ${{ steps.find_log_files.outputs.log_files }}
+    path: ${{ steps.log_finder.outputs.log_files }}
 ```
 
 ### Parsing mutliple files to find all log files
 
 ```yaml
 - name: Find Log Files
-  uses: ./
+  uses: justAnotherDev/log-finder-action@v1.0
   id: log_finder
   with:
     content_path: |
