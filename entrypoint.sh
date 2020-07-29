@@ -6,16 +6,18 @@ set -o pipefail
 
 CONTENT="${1}"
 CONTENT_PATH="${2}"
-SUFFIX="${3}"
+SUFFIX=`echo "${3}" | tr " " "|"`
 
 if [ -n "$CONTENT_PATH" ]; then
+    # load the contents of each passed in file to $CONTENT
     while IFS= read -r line; do
         CONTENT="$CONTENT
         `cat $line || true`"
     done <<< "$CONTENT_PATH"
 fi
 
-MATCHING_FILES=`echo $CONTENT | grep -Eo "[^ ]*\.${SUFFIX}\b"` || true
+# find all file paths of expected type inside $CONTENT string 
+MATCHING_FILES=`echo $CONTENT | grep -Eo "[^ ]*\.(${SUFFIX})\b"` || true
 
 if [ -n "$MATCHING_FILES" ]; then
     # escape special characters

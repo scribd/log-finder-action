@@ -43,14 +43,14 @@ The string to search for log files in.
 
 ### `content_path`
 
-The file which contains the string to search for log files in.
+The file(s) which contains the string to search for log files in.
 
 - require: false
 
 
 ### `file_suffix`
 
-File type to search for. Such as log, txt, etc.
+The file type(s) to search for. Such as log, txt, etc.
 
 - require: true
 
@@ -64,13 +64,17 @@ The found log file paths (separated by newlines).
 
 ## Example Usage
 
+### Parsing a string to find all log and txt files
+
 ```yaml
-- name: Find Log Files from Carthage Output
+- name: Find Log Files
   uses: justAnotherDev/log-finder-action@master
   id: find_log_files
   with:
     content: ${{ steps.some_build_step.outputs.build_output }}
-    file_suffix: log
+    file_suffix: |
+      log
+      txt
 
 - name: Upload Artifacts
   if: ${{ always() }}
@@ -78,6 +82,18 @@ The found log file paths (separated by newlines).
   with:
     name: build-logs
     path: ${{ steps.find_log_files.outputs.log_files }}
+```
+
+### Parsing mutliple files to find all log files
+
+```yaml
+- name: Find Log Files
+  uses: ./
+  id: log_finder
+  with:
+    content_path: |
+      test/test.txt
+      test/failure.log
 ```
 
 For more example usage, see the [workflow](https://github.com/justAnotherDev/log-finder-action/blob/master/.github/workflows/main.yml) being used for tests.
