@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/justAnotherDev/log-finder-action#readme",
   "dependencies": {
-    "@actions/core": "^1.2.4"
+    "@actions/core": "^1.2.6"
   }
 }
