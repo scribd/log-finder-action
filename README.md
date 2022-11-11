@@ -1,6 +1,6 @@
-# Log Finder v1.0
+# Log Finder
 
-![Log Finder](https://github.com/justAnotherDev/log-finder-action/workflows/Log%20Finder/badge.svg)
+![Log Finder](https://github.com/scribd/log-finder-action/workflows/Log%20Finder/badge.svg)
 
 GitHub Action for searching a string to find all contained log files.
 
@@ -68,7 +68,7 @@ The found log file paths (separated by newlines).
 
 ```yaml
 - name: Find Log Files
-  uses: justAnotherDev/log-finder-action@v1.0
+  uses: scribd/log-finder-action@v1
   id: log-finder
   with:
     content: ${{ steps.some_build_step.outputs.build_output }}
@@ -88,7 +88,7 @@ The found log file paths (separated by newlines).
 
 ```yaml
 - name: Find Log Files
-  uses: justAnotherDev/log-finder-action@v1.0
+  uses: scribd/log-finder-action@v1
   id: log-finder
   with:
     content-path: |
@@ -96,4 +96,4 @@ The found log file paths (separated by newlines).
       test/failure.log
 ```
 
-For more example usage, see the [workflow](https://github.com/justAnotherDev/log-finder-action/blob/master/.github/workflows/main.yml) being used for tests.
+For more example usage, see the [workflow](https://github.com/scribd/log-finder-action/blob/master/.github/workflows/main.yml) being used for tests.
