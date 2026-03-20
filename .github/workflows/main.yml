@@ -8,7 +8,7 @@ jobs:
     name: Test Using Content String
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
 
       - name: Load mock build output.
         id: load_build_output
@@ -36,7 +36,7 @@ jobs:
     name: Test Using Text File
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
 
       - name: Find Log Files
         uses: ./
